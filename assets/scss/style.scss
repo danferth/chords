@@ -1,0 +1,181 @@
+//NOTE: width for iPhone testing 414px
+$basecolor: cornsilk;
+
+body, html{
+  background:darken(white, 90%);
+}
+.wrap{
+  position: relative;
+}
+.output{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.KEY, .MODE, .CHORDS, .CHORDnotes, .NOTES{
+  //outline: 1px solid green;
+  color: $basecolor;
+  text-align: center;
+}
+
+.KEY{
+  font-weight:bold;
+  font-size: 12rem;
+  line-height: 12rem;
+  margin-top:1rem;
+  sup{
+    font-size:7rem;
+    font-weight:normal;
+    font-family: 'Ubuntu', sans-serif;
+    
+  }
+}
+.MODE{
+  margin:1rem 0 0 0;
+  font-size:2rem;
+  font-family: 'EB Garamond', serif;
+  &:before, &:after{
+    content:"~";
+    margin: 0 .5rem;
+    color:rgba($basecolor, .3);
+  }
+}
+.NOTES{
+  margin: .75rem 0 0 0;
+  font-size:1rem;
+  line-height:2rem;
+  height:2rem;
+  border: 1px solid rgba($basecolor, .5);
+  border-top:none;
+  border-bottom:none;
+  padding-right: .75rem;
+  color: rgba($basecolor, .6);
+  //margin: .5rem 0 0 0;
+  .chord{
+    sup{
+      margin-left:.125rem;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    &:after{
+      content:",";
+      margin-right: .75rem;
+      color: rgba($basecolor, .45);
+    }
+    &:last-of-type{
+     // padding-right:.75rem;
+      &:after{
+        margin-right:0;
+        content:"";
+      }
+    }
+    &:first-of-type{
+      padding-left:.75rem;
+    }
+  }
+}
+.CHORDS, .CHORDnotes{
+  margin: 2.5rem 0 0 0;
+  font-size:1.75rem;
+  position:relative;
+  .chord{
+    text-align:center;
+    font-family: 'EB Garamond', serif;
+    padding: .25rem 1rem;
+    border-right:1px solid rgba($basecolor, .7);
+    &:first-of-type{
+      border-left: 1px solid rgba($basecolor, .7);
+    }
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+  
+}
+
+label{
+  display:inline-block;
+}
+button{
+  margin:5rem 0 0 0;
+  background:grey;
+  color:black;
+  padding: 1.917rem 1rem;
+  border-radius:100%;
+  border:none;
+  outline:none;
+  &:hover{
+    background:darken(white, 70%);
+  }
+}
+
+
+//settings
+.settings{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  .group{
+    
+  }
+}
+.set_mode, .num_of_chords, .chords_to_choose_from{
+  position:relative;
+  margin-top:2rem;
+  h3{
+    color: darken(white, 70%);
+    text-align: center;
+  }
+  input[type='radio'], input[type='checkbox']{
+    display:none;
+    position:absolute;
+    top: -9999px;
+    left:-9999px;
+  }
+}
+.set_mode{
+  label{
+    background:grey;
+    color:black;
+    padding:.25rem 1rem;
+    border-radius:1rem;
+    margin-right:1rem;
+    &:last-of-type{
+      margin-right:0;
+    }
+  }
+}
+.num_of_chords, .chords_to_choose_from{
+  label{
+    background:grey;
+    color:black;
+    margin-right:.75rem;
+    padding: .3rem 0.5841875rem;;
+    border-radius:100%;
+    &:last-of-type{
+      margin-right:0;
+    }
+  }
+}
+input[type="radio"]:checked + label, input[type="checkbox"]:checked + label{
+  background:white;
+  color:black;
+}
+
+
+//nav at bottom of settings
+.openNav{
+  color:darken(white, 65%);
+  text-align:center;
+  font-size: 2rem;
+  border:1px dashed darken(white, 80%);
+  border-left: none;
+  border-right: none;
+  padding:.5rem 0;
+  cursor:pointer;
+}
+.closeNav{
+  border-top:none;
+}

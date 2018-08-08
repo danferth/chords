@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>~ Random CHORDS ~</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="assets/css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="wrap">
+<div class="settings">
+<div class="set_mode">
+  <h3>Set Mode</h3>
+  <div class="group">
+    <input id="mode_auto" type="radio" name="set_mode" value="auto" checked><label for="mode_auto">Auto</label>
+    <input id="mode_Major" type="radio" name="set_mode" value="Major"><label for="mode_Major">Major</label>
+    <input id="mode_minor" type="radio" name="set_mode" value="minor"><label for="mode_minor">minor</label>
+  </div>
+</div>
+
+
+
+<div class="num_of_chords">
+  <h3>How many Chords</h3>
+  <div class="group">
+    <input id="oneChord" type="radio" name="numOfChords" value="1"><label for="oneChord">1</label>
+    <input id="twoChord" type="radio" name="numOfChords" value="2"><label for="twoChord">2</label>
+    <input id="threeChord" type="radio" name="numOfChords" value="3" checked><label for="threeChord">3</label>
+    <input id="fourChord" type="radio" name="numOfChords" value="4"><label for="fourChord">4</label>
+    <input id="fiveChord" type="radio" name="numOfChords" value="5"><label for="fiveChord">5</label>
+  </div>
+</div>
+
+<div class="chords_to_choose_from">
+  <h3>Which chords can we use?</h3>
+  <div class="group">
+    <input id="Chord-0" type="checkbox" name="chordList" value="0" checked><label for="Chord-0">1</label>
+    <input id="Chord-1" type="checkbox" name="chordList" value="1" checked><label for="Chord-1">2</label>
+    <input id="Chord-2" type="checkbox" name="chordList" value="2" checked><label for="Chord-2">3</label>
+    <input id="Chord-3" type="checkbox" name="chordList" value="3" checked><label for="Chord-3">4</label>
+    <input id="Chord-4" type="checkbox" name="chordList" value="4" checked><label for="Chord-4">5</label>
+    <input id="Chord-5" type="checkbox" name="chordList" value="5" checked><label for="Chord-5">6</label>
+    <input id="Chord-6" type="checkbox" name="chordList" value="6" checked><label for="Chord-6">7</label>
+  </div>
+</div>
+
+</div><!-- END settings -->
+
+  <div class="openNav"><i class="fa fa-bars"></i></div>
+
+<div class="output">
+<span class="KEY"></span>
+
+<span class="MODE"></span>
+<span class="NOTES"></span>
+<span class="CHORDS"></span>
+<span class="CHORDnotes"></span>
+  
+ <button class="submit">NOPE</button> 
+  
+</div><!-- END output -->
+  
+</div> <!-- END wrap -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+  
+
+    <script  src="assets/js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
