@@ -3,6 +3,7 @@ $basecolor: cornsilk;
 
 body, html{
   background:darken(white, 90%);
+  font-size: 14px;
 }
 .wrap{
   position: relative;
@@ -21,19 +22,19 @@ body, html{
 
 .KEY{
   font-weight:bold;
-  font-size: 12rem;
-  line-height: 12rem;
-  margin-top:1rem;
+  font-size: 30rem;
+  line-height: 30rem;
+  margin-top:10rem;
   sup{
-    font-size:7rem;
+    font-size:18rem;
     font-weight:normal;
     font-family: 'Ubuntu', sans-serif;
     
   }
 }
 .MODE{
-  margin:1rem 0 0 0;
-  font-size:2rem;
+  margin: 0;
+  font-size: 7rem;
   font-family: 'EB Garamond', serif;
   &:before, &:after{
     content:"~";
@@ -42,24 +43,23 @@ body, html{
   }
 }
 .NOTES{
-  margin: .75rem 0 0 0;
-  font-size:1rem;
-  line-height:2rem;
-  height:2rem;
+  margin: 5rem 0 0 0;
+  font-size:3rem;
+  line-height:3rem;
   border: 1px solid rgba($basecolor, .5);
   border-top:none;
   border-bottom:none;
-  padding-right: .75rem;
+  padding-right: 2rem;
   color: rgba($basecolor, .6);
   //margin: .5rem 0 0 0;
   .chord{
     sup{
-      margin-left:.125rem;
+      margin-left:.25rem;
       font-family: 'Ubuntu', sans-serif;
     }
     &:after{
       content:",";
-      margin-right: .75rem;
+      margin-right: 1.5rem;
       color: rgba($basecolor, .45);
     }
     &:last-of-type{
@@ -70,18 +70,18 @@ body, html{
       }
     }
     &:first-of-type{
-      padding-left:.75rem;
+      padding-left:2rem;
     }
   }
 }
 .CHORDS, .CHORDnotes{
-  margin: 2.5rem 0 0 0;
-  font-size:1.75rem;
+  margin: 10rem 0 0 0;
+  font-size: 4.5rem;
   position:relative;
   .chord{
     text-align:center;
     font-family: 'EB Garamond', serif;
-    padding: .25rem 1rem;
+    padding: 1rem 2rem;
     border-right:1px solid rgba($basecolor, .7);
     &:first-of-type{
       border-left: 1px solid rgba($basecolor, .7);
@@ -90,17 +90,20 @@ body, html{
       margin-right: 0;
     }
   }
-  
+}
+.CHORDnotes .chord{
+  font-size:3.5;
 }
 
 label{
   display:inline-block;
 }
 button{
-  margin:5rem 0 0 0;
+  margin: 20rem 0 0 0;
   background:grey;
   color:black;
-  padding: 1.917rem 1rem;
+  font-size:3rem;
+  padding: 4.53682rem 2rem;
   border-radius:100%;
   border:none;
   outline:none;
@@ -125,6 +128,7 @@ button{
   position:relative;
   margin-top:2rem;
   h3{
+    font-size:4rem;
     color: darken(white, 70%);
     text-align: center;
   }
@@ -134,13 +138,20 @@ button{
     top: -9999px;
     left:-9999px;
   }
+  .group{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    font-size:4rem;
+  }
 }
 .set_mode{
   label{
     background:grey;
     color:black;
-    padding:.25rem 1rem;
-    border-radius:1rem;
+    padding:.25rem 3rem;
+    border-radius:5rem;
     margin-right:1rem;
     &:last-of-type{
       margin-right:0;
@@ -151,8 +162,7 @@ button{
   label{
     background:grey;
     color:black;
-    margin-right:.75rem;
-    padding: .3rem 0.5841875rem;;
+    padding: .3rem 1.4729675rem;;
     border-radius:100%;
     &:last-of-type{
       margin-right:0;
@@ -169,8 +179,8 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label{
 .openNav{
   color:darken(white, 65%);
   text-align:center;
-  font-size: 2rem;
-  border:1px dashed darken(white, 80%);
+  font-size: 5rem;
+  border:1px dashed darken(white, 75%);
   border-left: none;
   border-right: none;
   padding:.5rem 0;
