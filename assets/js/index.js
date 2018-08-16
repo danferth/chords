@@ -244,7 +244,7 @@ $('.CHORDnotes').html(formatChords(CHORD_NOTES));
 
 
 //on click
-  $('.submit').on('click', function(){
+  $('.button').on('click', function(){
     //do stuff when It's clicked
     KEY 				= GET_KEY();
     MODE				= GET_MODE();
