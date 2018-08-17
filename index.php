@@ -33,8 +33,8 @@ $ver = rand(0,100000);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
 
   <!-- uncomment for development-->
-  <link rel="stylesheet" href="assets/css/style.css?ver=<?php echo $ver; ?>">
-  <!--<link rel="stylesheet" href="assets/css/style.css?ver=3.0.0">-->
+  <!--<link rel="stylesheet" href="assets/css/style.css?ver=<?php //echo $ver; ?>">-->
+  <link rel="stylesheet" href="assets/css/style.css?ver=3.1.0">
 
   
 </head>
@@ -106,8 +106,8 @@ $ver = rand(0,100000);
 
   
     <!-- uncomment for development-->
-    <script  src="assets/js/index.js?ver=<?php echo $ver; ?>"></script>
-    <!--<script  src="assets/js/index.js?ver=3.0.0"></script>-->
+    <!--<script  src="assets/js/index.js?ver=<?php //echo $ver; ?>"></script>-->
+    <script  src="assets/js/index.js?ver=3.1.0"></script>
 
 
 
