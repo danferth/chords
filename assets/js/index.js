@@ -77,8 +77,67 @@ var append = [
 	}
 ];
 //Bliss
-var Bliss = [
-	
+var BLISS = [
+	{
+		"mode"	 : "minor",
+		"chords" : [0, 3, 0, 4, 3]
+	},
+	{
+		"mode"	 : "Major",
+		"chords" : [0, 3, 0, 4, 3]
+	},
+	{
+		"mode"   : "Major",
+		"chords" : [1, 4, 0]
+	},
+	{
+		"mode"   : "Major",
+		"chords" : [5, 2, 3, 1]
+	},
+	{
+		"mode"   : "minor",
+		"chords" : [0, 5, 6]
+	},
+	{
+		"mode"   : "minor",
+		"chords" : [0, 5, 2, 6]
+	},
+	{
+		"mode"   : "minor",
+		"chords" : [0, 6, 5, 4]
+	},
+	{
+		"mode"   : "Major",
+		"chords" : [5, 3, 0, 4]
+	},
+	{
+		"mode"   : "Major",
+		"chords" : [3, 0, 4, 5]
+	},
+	{
+		"mode"   : "Major",
+		"chords" : [0, 4, 5, 3]
+	},
+	{
+		"mode"   : "Major",
+		"chords" : [0, 5, 3, 4]
+	},
+	{
+		"mode"   : "Major",
+		"chords" : [0, 5, 1, 4]
+	},
+	{
+		"mode"   : "Major",
+		"chords" : [0, 4, 5, 2, 3]
+	},
+	{
+		"mode"   : "minor",
+		"chords" : [0, 3, 6]
+	},
+	{
+		"mode"   : "minor",
+		"chords" : [1, 4, 0]
+	}
 	];
 
 //========================================================================
@@ -265,8 +324,20 @@ $('.CHORDnotes').html(formatChords(CHORD_NOTES));
     	$('.CHORDS').html(formatChords(CHORDS));
     	$('.CHORDnotes').html(formatChords(CHORD_NOTES));
     }else{
+    	//get a random bliss
+    	var setBliss = BLISS[getRandom(0, BLISS.length-1)];
+    	Rmode_num = setBliss.mode;
+			Rchords_num = setBliss.chords;
     	KEY = GET_KEY();
+    	KEYnotes		= GET_KEY_NOTES();
+    	MODE = setBliss.mode;
+    	CHORDS			= GET_CHORDS(setBliss.chords);
+    	CHORD_NOTES = GET_CHORD_NOTES();
     	$('.KEY').html(KEY);
+    	$('.NOTES').html(formatChords(KEYnotes));
+    	$('.MODE').html(MODE);
+    	$('.CHORDS').html(formatChords(CHORDS));
+    	$('.CHORDnotes').html(formatChords(CHORD_NOTES));
     }
   });
 
@@ -279,7 +350,7 @@ $('.openNav').on('click', function(e){
   
   if($('.settings').is(":hidden")){
     $('.settings').css({"height":Hi});
-    $('.settings').slideDown(300);
+    $('.settings').slideDown(400);
   }else {
     $('.settings').slideUp(200);
   }
@@ -304,9 +375,19 @@ $('label[for="bliss"] i').on('click', function(e){
 	if(!$('input#bliss').is(':checked')){
 		Bliss = true;
 		$('input[name="set_mode"], input[name="numOfChords"], input[name="chordList"]').prop('checked', false).prop('disabled', true);
+		$('.set_mode, .num_of_chords, .chords_to_choose_from').hide();
+		$('.settings').toggleClass('glow');
+		$('.button').toggleClass('blissSolid');
+		$('.button').toggleClass('fa-meh-o');
+		$('.button').toggleClass('fa-smile-o');
 	}else{
 		Bliss = false;
+		$('.settings').toggleClass('glow');
+		$('.button').toggleClass('blissSolid');
+		$('.button').toggleClass('fa-meh-o');
+		$('.button').toggleClass('fa-smile-o');
 		$('input[name="set_mode"], input[name="numOfChords"], input[name="chordList"]').prop('disabled', false);
+		$('.set_mode, .num_of_chords, .chords_to_choose_from').slideDown();
 		$('input#mode_auto').prop('checked', true);
 		$('input#threeChord').prop('checked', true);
 		$('input[name="chordList"]').prop('checked', true);

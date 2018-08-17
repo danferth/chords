@@ -1,5 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 <?php
@@ -24,11 +28,13 @@ $ver = rand(0,100000);
   <title>CHORDS</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
-<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
 
-  
-      <link rel="stylesheet" href="assets/css/style.css?ver=<?php echo $ver; ?>">
+  <!-- uncomment for development-->
+  <link rel="stylesheet" href="assets/css/style.css?ver=<?php echo $ver; ?>">
+  <!--<link rel="stylesheet" href="assets/css/style.css?ver=3.0.0">-->
 
   
 </head>
@@ -84,12 +90,12 @@ $ver = rand(0,100000);
   <div class="openNav"><i class="fa fa-sliders"></i></div>
 
 <div class="output">
-<span class="KEY"></span>
+<span class="KEY animated fadeIn"></span>
 
-<span class="MODE"></span>
-<span class="NOTES"></span>
-<span class="CHORDS"></span>
-<span class="CHORDnotes"></span>
+<span class="MODE animated fadeIn"></span>
+<span class="NOTES animated fadeIn"></span>
+<span class="CHORDS animated fadeIn"></span>
+<span class="CHORDnotes animated fadeIn"></span>
   
 <i class="button fa fa-meh-o"></i>
   
@@ -99,8 +105,9 @@ $ver = rand(0,100000);
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 
   
-
+    <!-- uncomment for development-->
     <script  src="assets/js/index.js?ver=<?php echo $ver; ?>"></script>
+    <!--<script  src="assets/js/index.js?ver=3.0.0"></script>-->
 
 
 

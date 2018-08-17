@@ -1,6 +1,6 @@
 //NOTE: width for iPhone testing 414px
 $basecolor: cornsilk;
-
+$bodyBG: darken(white, 90%);
 $NAVsize: 5rem;
 $NAVline: 5rem;
 $NAVpadding: .5rem;
@@ -28,8 +28,10 @@ $buttonMargin: 9rem;
 $settingsH3size: 4rem;
 $settingGroupSize: 3.5rem;
 
+
+
 body, html{
-  background:darken(white, 90%);
+  background: $bodyBG;
   font-size: 1vh;
 }
 .wrap{
@@ -127,14 +129,14 @@ label{
 }
 .button{
   background: transparent;
-  color:rgba(darken($basecolor, 50%), .3);
+  color:rgba(darken($basecolor, 10%), .6);
   margin-top: $buttonMargin;
   font-size: $buttonSize;
   text-align:center;
   width:10vh;
   height:10vh;
   border-radius:100%;
-  border:6px solid rgba(darken($basecolor, 25%), .5);
+  border:2px solid rgba(darken($basecolor, 25%), .5);
   outline:none;
 }
 
@@ -213,13 +215,28 @@ label{
 .bliss input[type='checkbox']:checked + label{
   background:none;
   color:$basecolor;
+  text-shadow:0 0 1vh black;
+  box-shadow: none;
 }
 input[type="radio"]:checked + label, input[type="checkbox"]:checked + label{
   background:$basecolor;
   color:darken(white, 80%);
+  box-shadow: 0 0 1vh black;
 }
-
-
+//if bliss is checked need to add this to .settings
+.glow{
+  background: linear-gradient(to bottom, $basecolor 0%, $bodyBG 100%);
+  background:$basecolor;
+}
+//for when it's bliss time the button changes
+.blissSolid{
+  box-shadow:0 0 4vh 1vh $basecolor;
+  color:rgba($basecolor, .8);
+}
+//disabled inputs
+input:disabled + label{
+  opacity:.3;
+}
 
 //nav at bottom of settings
 .openNav{
