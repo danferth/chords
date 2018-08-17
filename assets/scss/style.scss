@@ -5,32 +5,35 @@ $NAVsize: 5rem;
 $NAVline: 5rem;
 $NAVpadding: .5rem;
 
-$KEYsize: 30rem;
-$KEYline: 30rem;
-$KEYmargin: 6rem;
-$KEYsupSize: 18rem;
+$KEYsize: 29rem;
+$KEYline: 29rem;
+$KEYmargin: 5rem;
+$KEYsupSize: 17rem;
 
-$MODEsize: 7rem;
+$MODEsize: 5rem;
 
 $NOTESsize: 3rem;
-$NOTESmargin: 5rem;
+$NOTESmargin: 4rem;
 $NOTESline: 3rem;
 
-$CHORDmargin: 10rem;
+$CHORDmargin: 8rem;
 $CHORDsize: 4.5rem;
 
 $CHORDnotesSize: 3.5rem;
 
-$buttonSize: 8rem;
-$buttonLine: 8rem;
-$buttonMargin: 10rem;
+$buttonSize: 10vh;
+$buttonLine: 10vh;
+$buttonMargin: 9rem;
+
+$settingsH3size: 4rem;
+$settingGroupSize: 3.5rem;
 
 body, html{
   background:darken(white, 90%);
   font-size: 1vh;
 }
 .wrap{
-  position: relative;
+  
 }
 .output{
   display:flex;
@@ -123,20 +126,16 @@ label{
   display:inline-block;
 }
 .button{
-  background:grey;
-  color:black;
+  background: transparent;
+  color:rgba(darken($basecolor, 50%), .3);
   margin-top: $buttonMargin;
   font-size: $buttonSize;
-  line-height: $buttonLine;
   text-align:center;
   width:10vh;
   height:10vh;
   border-radius:100%;
-  border:none;
+  border:6px solid rgba(darken($basecolor, 25%), .5);
   outline:none;
-    &:before{
-      vertical-align:middle;
-    }
 }
 
 
@@ -151,35 +150,37 @@ label{
     
   }
 }
-.set_mode, .num_of_chords, .chords_to_choose_from{
+
+.set_mode, .num_of_chords, .chords_to_choose_from, .bliss{
   position:relative;
   margin-top:2rem;
   h3{
-    font-size:4rem;
-    color: darken(white, 70%);
+    font-size: $settingsH3size;
+    color: darken(white, 60%);
     text-align: center;
+    margin-bottom:2rem;
   }
   input[type='radio'], input[type='checkbox']{
     display:none;
     position:absolute;
     top: -9999px;
-    left:-9999px;
+    left: -9999px;
   }
   .group{
     display:flex;
     flex-direction: row;
     flex-wrap:nowrap;
     justify-content: space-between;
-    font-size:4rem;
+    font-size: $settingGroupSize;
   }
 }
 .set_mode{
   label{
-    background:grey;
-    color:black;
-    padding:.25rem 3rem;
+    background: darken(white, 80%);
+    color: darken(white, 90%);
+    padding:.5rem 3rem;
     border-radius:5rem;
-    margin-right:1rem;
+    margin-right:1.5rem;
     &:last-of-type{
       margin-right:0;
     }
@@ -187,19 +188,37 @@ label{
 }
 .num_of_chords, .chords_to_choose_from{
   label{
-    background:grey;
-    color:black;
-    padding: .3rem 1.4729675rem;;
+    background:darken(white, 80%);
+    color:darken(white, 90%);
+    width:4rem;
+    height:4rem;
+    text-align:center;
+    vertical-align:middle;
+    //padding: .3rem 1.4729675rem;;
     border-radius:100%;
     &:last-of-type{
       margin-right:0;
     }
   }
 }
-input[type="radio"]:checked + label, input[type="checkbox"]:checked + label{
-  background:white;
-  color:black;
+.bliss{
+  .group{
+    justify-content:center;
+    font-size:7rem;
+    label{
+      color:darken(white, 80%);
+    }
+  }
 }
+.bliss input[type='checkbox']:checked + label{
+  background:none;
+  color:$basecolor;
+}
+input[type="radio"]:checked + label, input[type="checkbox"]:checked + label{
+  background:$basecolor;
+  color:darken(white, 80%);
+}
+
 
 
 //nav at bottom of settings

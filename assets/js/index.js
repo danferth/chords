@@ -76,6 +76,10 @@ var append = [
 		"minor" : ["m", "°", "M", "m", "m", "M", "M"]
 	}
 ];
+//Bliss
+var Bliss = [
+	
+	];
 
 //========================================================================
 //=============================PARSING SECTION============================
@@ -120,7 +124,7 @@ var VERIFY_CHORD = function(test, array){
 var Rkey_num;
 var Rmode_num;
 var Rchords_num;
-
+var Bliss = false;
 //GET random Key
 var GET_KEY = function(){
 	var KEYS_length = KEYS.length -1;
@@ -246,19 +250,24 @@ $('.CHORDnotes').html(formatChords(CHORD_NOTES));
 //on click
   $('.button').on('click', function(){
     //do stuff when It's clicked
-    KEY 				= GET_KEY();
-    MODE				= GET_MODE();
-    NUMBER			= CHORD_NUMBER();
-    CHORD_SET 	= GET_CHORD_SET(NUMBER);
-    CHORDS			= GET_CHORDS(CHORD_SET);
-    KEYnotes		= GET_KEY_NOTES();
-    CHORD_NOTES = GET_CHORD_NOTES();
+    if(Bliss == false){
+    	KEY 				= GET_KEY();
+    	MODE				= GET_MODE();
+    	NUMBER			= CHORD_NUMBER();
+    	CHORD_SET 	= GET_CHORD_SET(NUMBER);
+    	CHORDS			= GET_CHORDS(CHORD_SET);
+    	KEYnotes		= GET_KEY_NOTES();
+    	CHORD_NOTES = GET_CHORD_NOTES();
 
-    $('.KEY').html(KEY);
-    $('.MODE').html(MODE);
-    $('.NOTES').html(formatChords(KEYnotes));
-    $('.CHORDS').html(formatChords(CHORDS));
-    $('.CHORDnotes').html(formatChords(CHORD_NOTES));
+    	$('.KEY').html(KEY);
+    	$('.MODE').html(MODE);
+    	$('.NOTES').html(formatChords(KEYnotes));
+    	$('.CHORDS').html(formatChords(CHORDS));
+    	$('.CHORDnotes').html(formatChords(CHORD_NOTES));
+    }else{
+    	KEY = GET_KEY();
+    	$('.KEY').html(KEY);
+    }
   });
 
 //setting open close stuff
@@ -285,6 +294,23 @@ $('.CHORDS').on('click', function(e){
 $('.CHORDnotes').on('click', function(e){
 	$(this).hide();
 	$('.CHORDS').show();
+});
+
+//bliss toggle
+$('label[for="bliss"] i').on('click', function(e){
+		$(this).toggleClass('fa-toggle-on');
+		$(this).toggleClass('fa-toggle-off');
+
+	if(!$('input#bliss').is(':checked')){
+		Bliss = true;
+		$('input[name="set_mode"], input[name="numOfChords"], input[name="chordList"]').prop('checked', false).prop('disabled', true);
+	}else{
+		Bliss = false;
+		$('input[name="set_mode"], input[name="numOfChords"], input[name="chordList"]').prop('disabled', false);
+		$('input#mode_auto').prop('checked', true);
+		$('input#threeChord').prop('checked', true);
+		$('input[name="chordList"]').prop('checked', true);
+	}
 });
 
 }); //END Doc Ready

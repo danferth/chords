@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" >
 
+
+<?php
+$ver = rand(0,100000);
+?>
+
+
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-icon-57x57.png">
@@ -15,14 +21,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-  <title>~ CHORDS ~</title>
+  <title>CHORDS</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
 <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   
-      <link rel="stylesheet" href="assets/css/style.css?ver=3.1">
+      <link rel="stylesheet" href="assets/css/style.css?ver=<?php echo $ver; ?>">
 
   
 </head>
@@ -32,7 +38,7 @@
   <div class="wrap">
 <div class="settings">
 <div class="set_mode">
-  <h3>Set Mode</h3>
+  <h3>set mode</h3>
   <div class="group">
     <input id="mode_auto" type="radio" name="set_mode" value="auto" checked><label for="mode_auto">Auto</label>
     <input id="mode_Major" type="radio" name="set_mode" value="Major"><label for="mode_Major">Major</label>
@@ -43,7 +49,7 @@
 
 
 <div class="num_of_chords">
-  <h3>How many Chords</h3>
+  <h3>how many chords?</h3>
   <div class="group">
     <input id="oneChord" type="radio" name="numOfChords" value="1"><label for="oneChord">1</label>
     <input id="twoChord" type="radio" name="numOfChords" value="2"><label for="twoChord">2</label>
@@ -54,7 +60,7 @@
 </div>
 
 <div class="chords_to_choose_from">
-  <h3>Which chords can we use?</h3>
+  <h3>which chords can we use?</h3>
   <div class="group">
     <input id="Chord-0" type="checkbox" name="chordList" value="0" checked><label for="Chord-0">1</label>
     <input id="Chord-1" type="checkbox" name="chordList" value="1" checked><label for="Chord-1">2</label>
@@ -63,6 +69,13 @@
     <input id="Chord-4" type="checkbox" name="chordList" value="4" checked><label for="Chord-4">5</label>
     <input id="Chord-5" type="checkbox" name="chordList" value="5" checked><label for="Chord-5">6</label>
     <input id="Chord-6" type="checkbox" name="chordList" value="6" checked><label for="Chord-6">7</label>
+  </div>
+</div>
+
+<div class="bliss">
+  <h3>predestined bliss?</h3>
+  <div class="group">
+    <input id="bliss" type="checkbox" name="bliss" value="0" ><label for="bliss"><i class="fa fa-toggle-off"></i></label>
   </div>
 </div>
 
@@ -87,7 +100,7 @@
 
   
 
-    <script  src="assets/js/index.js?ver=2"></script>
+    <script  src="assets/js/index.js?ver=<?php echo $ver; ?>"></script>
 
 
 
