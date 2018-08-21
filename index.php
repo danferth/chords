@@ -33,8 +33,8 @@ $ver = rand(0,100000);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
 
   <!-- uncomment for development-->
-  <!--<link rel="stylesheet" href="assets/css/style.css?ver=<?php //echo $ver; ?>">-->
-  <link rel="stylesheet" href="assets/css/style.css?ver=3.1.0">
+  <link rel="stylesheet" href="assets/css/style.css?ver=<?php echo $ver; ?>">
+  <!--<link rel="stylesheet" href="assets/css/style.css?ver=3.1.0">-->
 
   
 </head>
@@ -81,7 +81,7 @@ $ver = rand(0,100000);
 <div class="bliss">
   <h3>predestined bliss?</h3>
   <div class="group">
-    <input id="bliss" type="checkbox" name="bliss" value="0" ><label for="bliss"><i class="fa fa-toggle-off"></i></label>
+    <input id="bliss" type="checkbox" name="bliss" value="0" ><label for="bliss"><i class="fa fa-thumbs-down"></i></label>
   </div>
 </div>
 
@@ -106,8 +106,8 @@ $ver = rand(0,100000);
 
   
     <!-- uncomment for development-->
-    <!--<script  src="assets/js/index.js?ver=<?php //echo $ver; ?>"></script>-->
-    <script  src="assets/js/index.js?ver=3.1.0"></script>
+    <script  src="assets/js/index.js?ver=<?php echo $ver; ?>"></script>
+    <!--<script  src="assets/js/index.js?ver=3.1.0"></script>-->
 
 
 

@@ -1,16 +1,16 @@
 //NOTE: width for iPhone testing 414px
 $basecolor: cornsilk;
-$bodyBG: darken(white, 90%);
+$bodyBG: hsla(204, 9%, 14%, 1);
 $NAVsize: 5rem;
 $NAVline: 5rem;
 $NAVpadding: .5rem;
 
 $KEYsize: 29rem;
 $KEYline: 29rem;
-$KEYmargin: 5rem;
+$KEYmargin: 3rem;
 $KEYsupSize: 17rem;
 
-$MODEsize: 5rem;
+$MODEsize: 4.5rem;
 
 $NOTESsize: 3rem;
 $NOTESmargin: 4rem;
@@ -25,7 +25,7 @@ $buttonSize: 10vh;
 $buttonLine: 10vh;
 $buttonMargin: 9rem;
 
-$settingsH3size: 4rem;
+$settingsH3size: 2rem;
 $settingGroupSize: 3.5rem;
 
 
@@ -54,6 +54,7 @@ body, html{
   font-size: $KEYsize;
   line-height: $KEYline;
   margin-top: $KEYmargin;
+  text-shadow: 0 0 5vh darken($bodyBG, 50%);
   sup{
     font-size: $KEYsupSize;
     font-weight:normal;
@@ -65,10 +66,11 @@ body, html{
   margin: 0;
   font-size: $MODEsize;
   font-family: 'EB Garamond', serif;
+  text-shadow: 0 0 1vh darken($bodyBG, 50%);
   &:before, &:after{
     content:"~";
     margin: 0 .5rem;
-    color:rgba($basecolor, .3);
+    color:rgba($basecolor, .2);
   }
 }
 .NOTES{
@@ -104,6 +106,7 @@ body, html{
   }
 }
 .CHORDS, .CHORDnotes{
+  text-shadow: 0 0 2vh darken($bodyBG, 50%);
   margin-top: $CHORDmargin;
   font-size: $CHORDsize;
   position:relative;
@@ -137,6 +140,7 @@ label{
   height:10vh;
   border-radius:100%;
   border:2px solid rgba(darken($basecolor, 25%), .5);
+  box-shadow: 0 0 1.75vh darken($bodyBG, 15%);
   outline:none;
 }
 
@@ -158,9 +162,9 @@ label{
   margin-top:2rem;
   h3{
     font-size: $settingsH3size;
-    color: darken(white, 60%);
+    color: lighten($bodyBG, 25%);
     text-align: center;
-    margin-bottom:2rem;
+    margin-bottom:2.5rem;
   }
   input[type='radio'], input[type='checkbox']{
     display:none;
@@ -178,7 +182,7 @@ label{
 }
 .set_mode{
   label{
-    background: darken(white, 80%);
+    background: lighten($bodyBG, 15%);
     color: darken(white, 90%);
     padding:.5rem 3rem;
     border-radius:5rem;
@@ -190,7 +194,7 @@ label{
 }
 .num_of_chords, .chords_to_choose_from{
   label{
-    background:darken(white, 80%);
+    background:lighten($bodyBG, 15%);
     color:darken(white, 90%);
     width:4rem;
     height:4rem;
@@ -198,6 +202,7 @@ label{
     vertical-align:middle;
     //padding: .3rem 1.4729675rem;;
     border-radius:100%;
+    margin-right:1.5rem;
     &:last-of-type{
       margin-right:0;
     }
@@ -208,7 +213,7 @@ label{
     justify-content:center;
     font-size:7rem;
     label{
-      color:darken(white, 80%);
+      color:lighten($bodyBG, 15%);
     }
   }
 }
@@ -240,11 +245,11 @@ input:disabled + label{
 
 //nav at bottom of settings
 .openNav{
-  color:darken(white, 65%);
+  color:lighten($bodyBG, 15%);
   text-align:center;
   font-size: $NAVsize;
   line-height: $NAVline;
-  border:1px dashed darken(white, 75%);
+  border:1px dashed lighten($bodyBG, 5%);
   border-left: none;
   border-right: none;
   padding: $NAVpadding 0;

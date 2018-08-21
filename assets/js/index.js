@@ -369,17 +369,18 @@ $('.CHORDnotes').on('click', function(e){
 
 //bliss toggle
 $('label[for="bliss"] i').on('click', function(e){
-		$(this).toggleClass('fa-toggle-on');
-		$(this).toggleClass('fa-toggle-off');
+		$(this).toggleClass('fa-thumbs-up');
+		$(this).toggleClass('fa-thumbs-down');
 
 	if(!$('input#bliss').is(':checked')){
 		Bliss = true;
 		$('input[name="set_mode"], input[name="numOfChords"], input[name="chordList"]').prop('checked', false).prop('disabled', true);
-		$('.set_mode, .num_of_chords, .chords_to_choose_from').hide();
+		$('.set_mode, .num_of_chords, .chords_to_choose_from').slideUp();
 		$('.settings').toggleClass('glow');
 		$('.button').toggleClass('blissSolid');
 		$('.button').toggleClass('fa-meh-o');
 		$('.button').toggleClass('fa-smile-o');
+		$('.bliss h3').html('you have chosen bliss...');
 	}else{
 		Bliss = false;
 		$('.settings').toggleClass('glow');
@@ -391,6 +392,7 @@ $('label[for="bliss"] i').on('click', function(e){
 		$('input#mode_auto').prop('checked', true);
 		$('input#threeChord').prop('checked', true);
 		$('input[name="chordList"]').prop('checked', true);
+		$('.bliss h3').html('predestined bliss?');
 	}
 });
 
