@@ -54,7 +54,7 @@ body, html{
   font-size: $KEYsize;
   line-height: $KEYline;
   margin-top: $KEYmargin;
-  text-shadow: 0 0 5vh darken($bodyBG, 50%);
+  text-shadow: 0 0 2vh darken($bodyBG, 50%);
   sup{
     font-size: $KEYsupSize;
     font-weight:normal;
@@ -66,7 +66,7 @@ body, html{
   margin: 0;
   font-size: $MODEsize;
   font-family: 'EB Garamond', serif;
-  text-shadow: 0 0 1vh darken($bodyBG, 50%);
+  text-shadow: 0 0 1vh darken($bodyBG, 15%);
   &:before, &:after{
     content:"~";
     margin: 0 .5rem;
@@ -106,7 +106,7 @@ body, html{
   }
 }
 .CHORDS, .CHORDnotes{
-  text-shadow: 0 0 2vh darken($bodyBG, 50%);
+  text-shadow: 0 0 1vh darken($bodyBG, 15%);
   margin-top: $CHORDmargin;
   font-size: $CHORDsize;
   position:relative;
@@ -259,3 +259,15 @@ input:disabled + label{
   border-top:none;
 }
 
+//footnote on settings page
+.footnote{
+  position:absolute;
+  bottom:7rem;
+  text-align:center;
+  font-size: 1.5rem;
+  width:100%;
+  color:lighten($bodyBG, 15%);
+  a{
+    color:inherit;
+  }
+}

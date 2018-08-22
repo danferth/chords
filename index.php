@@ -85,6 +85,10 @@ $ver = rand(0,100000);
   </div>
 </div>
 
+<div class="footnote">
+  <p>Created to help be creative by <a href="http://danferth.com">danferth</a></p>
+</div>
+
 </div><!-- END settings -->
 
   <div class="openNav"><i class="fa fa-sliders"></i></div>
