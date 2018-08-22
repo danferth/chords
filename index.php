@@ -7,7 +7,8 @@
 
 
 <?php
-$ver = rand(0,100000);
+//$ver = rand(0,100000);
+$ver = "3.3.0";
 ?>
 
 
@@ -34,7 +35,6 @@ $ver = rand(0,100000);
 
   <!-- uncomment for development-->
   <link rel="stylesheet" href="assets/css/style.css?ver=<?php echo $ver; ?>">
-  <!--<link rel="stylesheet" href="assets/css/style.css?ver=3.1.0">-->
 
   
 </head>
@@ -86,7 +86,7 @@ $ver = rand(0,100000);
 </div>
 
 <div class="footnote">
-  <p>Created to help be creative by <a href="http://danferth.com">danferth</a></p>
+  <p>created to help be creative | <a href="http://danferth.com"><i class="fa fa-user-circle-o"></i></a> <a href="https://github.com/danferth/chords"><i class="fa fa-github"></i></a></p>
 </div>
 
 </div><!-- END settings -->
@@ -111,7 +111,6 @@ $ver = rand(0,100000);
   
     <!-- uncomment for development-->
     <script  src="assets/js/index.js?ver=<?php echo $ver; ?>"></script>
-    <!--<script  src="assets/js/index.js?ver=3.1.0"></script>-->
 
 
 

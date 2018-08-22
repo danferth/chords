@@ -269,5 +269,11 @@ input:disabled + label{
   color:lighten($bodyBG, 15%);
   a{
     color:inherit;
+    margin-right: 1vh;
+    margin-left:1vh;
+    &:last-of-type{
+      margin-right:0;
+      margin-left:0;
+    }
   }
 }
