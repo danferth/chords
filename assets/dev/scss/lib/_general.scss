@@ -2,31 +2,24 @@
 //NOTE: width for iPhone testing 414px
 $basecolor: cornsilk;
 $bodyBG: hsla(204, 9%, 14%, 1);
-$NAVsize: 5rem;
-$NAVline: 5rem;
-$NAVpadding: .5rem;
 
 $KEYsize: 29rem;
 $KEYline: 29rem;
-$KEYmargin: 3rem;
 $KEYsupSize: 17rem;
 
 $MODEsize: 4.5rem;
 
 $NOTESsize: 3rem;
-$NOTESmargin: 4rem;
 $NOTESline: 3rem;
 
-$CHORDmargin: 8rem;
 $CHORDsize: 4.5rem;
 
 $CHORDnotesSize: 3.5rem;
 
 $buttonSize: 10vh;
 $buttonLine: 10vh;
-$buttonMargin: 9rem;
 
-$settingsH3size: 2rem;
+$settingsH3size: 3rem;
 $settingGroupSize: 3.5rem;
 
 
@@ -36,16 +29,23 @@ body, html{
   font-size: 1vh;
 }
 .wrap{
-  
+  height:100vh;
+  width:100vw;
+  position:relative;
 }
 .output{
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:space-evenly;
   align-items:center;
+  height:100vh;
+  width:100vw;
+  position:absolute;
+  top:0;
+  left:0;
 }
+
 .KEY, .MODE, .CHORDS, .CHORDnotes, .NOTES{
-  //outline: 1px solid green;
   color: $basecolor;
   text-align: center;
 }
@@ -54,7 +54,6 @@ body, html{
   font-weight:bold;
   font-size: $KEYsize;
   line-height: $KEYline;
-  margin-top: $KEYmargin;
   text-shadow: 0 0 2vh darken($bodyBG, 50%);
   sup{
     font-size: $KEYsupSize;
@@ -76,14 +75,12 @@ body, html{
 }
 .NOTES{
   font-size: $NOTESsize;
-  margin-top: $NOTESmargin;
   line-height: $NOTESline;
   border: 1px solid rgba($basecolor, .5);
   border-top:none;
   border-bottom:none;
   padding-right: 2rem;
   color: rgba($basecolor, .6);
-  //margin: .5rem 0 0 0;
   .chord{
     sup{
       margin-left:.25rem;
@@ -108,7 +105,6 @@ body, html{
 }
 .CHORDS, .CHORDnotes{
   text-shadow: 0 0 1vh darken($bodyBG, 15%);
-  margin-top: $CHORDmargin;
   font-size: $CHORDsize;
   position:relative;
   .chord{
@@ -134,7 +130,8 @@ label{
 .button{
   background: transparent;
   color:rgba(darken($basecolor, 10%), .6);
-  margin-top: $buttonMargin;
+  margin-bottom:0;
+  line-height: .96;
   padding:0;
   font-size: $buttonSize;
   text-align:center;
@@ -153,6 +150,13 @@ label{
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  height:100vh;
+  width:100vw;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  visibility:hidden;
   overflow:hidden;
   .group{
     
@@ -161,12 +165,12 @@ label{
 
 .set_mode, .num_of_chords, .chords_to_choose_from, .bliss{
   position:relative;
-  margin-top:2rem;
+  margin-top:4rem;
   h3{
     font-size: $settingsH3size;
     color: lighten($bodyBG, 25%);
     text-align: center;
-    margin-bottom:2.5rem;
+    margin-bottom:2rem;
   }
   input[type='radio'], input[type='checkbox']{
     display:none;
@@ -252,28 +256,12 @@ input:disabled + label{
   opacity:.3;
 }
 
-//nav at bottom of settings
-.openNav{
-  color:lighten($bodyBG, 15%);
-  text-align:center;
-  font-size: $NAVsize;
-  line-height: $NAVline;
-  border:1px dashed lighten($bodyBG, 5%);
-  border-left: none;
-  border-right: none;
-  padding: $NAVpadding 0;
-  cursor:pointer;
-}
-.closeNav{
-  border-top:none;
-}
-
 //footnote on settings page
 .footnote{
   position:absolute;
-  bottom:7rem;
+  bottom:2rem;
   text-align:center;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   width:100%;
   color:lighten($bodyBG, 15%);
   a{

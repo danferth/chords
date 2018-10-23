@@ -63,7 +63,7 @@ if($hasForm){
         
         <!-- You know what would be cool? some google font action! -->
         <!-- Well..... we're waiting on the fonts bruh -->
-        
+        <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Ubuntu" rel="stylesheet">
         <!-- css -->
         <link rel="stylesheet" href="/assets/build/css/site.css?ver=<?php echo $v; ?>">
         <?php

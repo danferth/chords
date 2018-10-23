@@ -25,7 +25,7 @@ $gmailUser       = "user@gmail.com";
 $gmailPass       = "passW0rd";
 
 //global loader
-$globalLoader   = false;
+$globalLoader   = true;
 
 // functions
 require('functions.php');

@@ -344,19 +344,50 @@ $('.CHORDnotes').html(formatChords(CHORD_NOTES));
   });
 
 //setting open close stuff
-$('.settings').hide();
-$('.openNav').on('click', function(e){
-  var h = $(this).outerHeight();
-  var H = $(window).outerHeight();
-  var Hi = (H-h)+"px";
-  
-  if($('.settings').is(":hidden")){
-    $('.settings').css({"height":Hi});
-    $('.settings').slideDown(400);
-  }else {
-    $('.settings').slideUp(200);
-  }
+//******************************
+//hammer swipe to show goes here
+//******************************
+var navEl 					= document.getElementById('wrap');
+var settingsEl			= document.getElementById('settings');
+var outputEl				= document.getElementById('output');
+
+var hammerWrap			= new Hammer(navEl);
+var hammerSettings	= new Hammer(settingsEl);
+var hammerOutput		= new Hammer(outputEl);
+
+TweenMax.set('.settings', {x:500, scale:-1.25, height:"50vh"});
+
+var openSettings		= new TimelineMax();
+		openSettings.add(TweenMax.to('.output', .25, {x:-500, scale:1.25, height:"50vh",  autoAlpha:0}));
+		openSettings.add(TweenMax.to('.settings', .125, {x:0, scale:1, height:"100vh", autoAlpha:1}));
+		openSettings.pause(0);
+
+var openOutput			= new TimelineMax();
+		openOutput.add(TweenMax.to('.settings', .25, {x:500, scale:-1.25, height:"50vh", autoAlpha:0}));
+		openOutput.add(TweenMax.to('.output', .125, {x:0, scale:1, height:"100vh", autoAlpha:1}));
+		openOutput.pause(0);
+
+hammerOutput.on('swipeleft', function(e){
+	openSettings.play(0);
+	console.log('swipeleft');
 });
+
+hammerSettings.on('swiperight', function(e){
+	openOutput.play(0);
+	console.log('swiperight');
+});
+// $('.openNav').on('click', function(e){
+//   var h = $(this).outerHeight();
+//   var H = $(window).outerHeight();
+//   var Hi = (H-h)+"px";
+  
+//   if($('.settings').is(":hidden")){
+//     $('.settings').css({"height":Hi});
+//     $('.settings').slideDown(400);
+//   }else {
+//     $('.settings').slideUp(200);
+//   }
+// });
 
 //toggle the chord and chord note elements
 $('.CHORDnotes').hide();

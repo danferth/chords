@@ -7,8 +7,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
 ?>
 
 <!-- START -->
-<div class="wrap">
-<div class="settings">
+<div class="wrap" id="wrap">
+<div class="settings" id="settings">
 <div class="set_mode">
   <h3>set mode</h3>
   <div class="group">
@@ -52,20 +52,21 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
 </div>
 
 <div class="footnote">
-  <p>created to help be creative | <a href="http://danferth.com"><i class="fa fa-user-circle-o"></i></a> <a href="https://github.com/danferth/chords"><i class="fa fa-github"></i></a></p>
+  <p><a href="https://danferth.com"><i class="fa fa-user-circle-o"></i></a> | <a href="https://github.com/danferth/chords"><i class="fa fa-github"></i></a></p>
 </div>
 
 </div><!-- END settings -->
 
-  <div class="openNav"><i class="fa fa-sliders"></i></div>
+  <!--<div class="openNav"><i class="fa fa-sliders"></i></div>-->
 
-<div class="output">
-<span class="KEY animated fadeIn"></span>
+<div class="output" id="output">
 
-<span class="MODE animated fadeIn"></span>
-<span class="NOTES animated fadeIn"></span>
-<span class="CHORDS animated fadeIn"></span>
-<span class="CHORDnotes animated fadeIn"></span>
+<span class="KEY"></span>
+
+<span class="MODE"></span>
+<span class="NOTES"></span>
+<span class="CHORDS"></span>
+<span class="CHORDnotes"></span>
   
 <i class="button fa fa-meh-o"></i>
   
