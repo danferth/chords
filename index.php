@@ -1,47 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 <?php
-//$ver = rand(0,100000);
-$ver = "3.3.0";
+//set title and description for page
+$title        = 'chords';
+$description  = 'random chords to jam to';
+$pageLoader   = false;
+include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
 ?>
 
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-  <title>CHORDS</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
-
-  <!-- uncomment for development-->
-  <link rel="stylesheet" href="assets/css/style.css?ver=<?php echo $ver; ?>">
-
-  
-</head>
-
-<body>
-
-  <div class="wrap">
+<!-- START -->
+<div class="wrap">
 <div class="settings">
 <div class="set_mode">
   <h3>set mode</h3>
@@ -106,15 +72,6 @@ $ver = "3.3.0";
 </div><!-- END output -->
   
 </div> <!-- END wrap -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<!-- END -->
 
-  
-    <!-- uncomment for development-->
-    <script  src="assets/js/index.js?ver=<?php echo $ver; ?>"></script>
-
-
-
-
-</body>
-
-</html>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/foot.php'; ?>
