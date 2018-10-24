@@ -308,8 +308,14 @@ $('.CHORDS').html(formatChords(CHORDS));
 $('.CHORDnotes').html(formatChords(CHORD_NOTES));
 
 
-//on click
+//on click of button
+
+var buttonAnimation = new TimelineMax({paused:true});
+		buttonAnimation.to('.button', .1, {scale:.90, ease: Power3.easeOut});
+		buttonAnimation.to('.button', .125, {scale:1, ease: Power3.easeOut});
+
   $('.button').on('click', function(){
+  	buttonAnimation.play(0);
     //do stuff when It's clicked
     if(Bliss == false){
     	KEY 				= GET_KEY();
@@ -357,75 +363,76 @@ var hammerOutput		= new Hammer(outputEl);
 
 TweenMax.set('.settings', {x:500, scale:-1.25, height:"50vh"});
 
-var openSettings		= new TimelineMax();
-		openSettings.add(TweenMax.to('.output', .25, {x:-500, scale:1.25, height:"50vh",  autoAlpha:0}));
-		openSettings.add(TweenMax.to('.settings', .125, {x:0, scale:1, height:"100vh", autoAlpha:1}));
-		openSettings.pause(0);
+var openSettings		= new TimelineMax({paused:true});
+		openSettings.to('.output', .25, {x:-500, scale:1.25, height:"50vh",  autoAlpha:0});
+		openSettings.to('.settings', .125, {x:0, scale:1, height:"100vh", autoAlpha:1}, '-=.125');
 
-var openOutput			= new TimelineMax();
-		openOutput.add(TweenMax.to('.settings', .25, {x:500, scale:-1.25, height:"50vh", autoAlpha:0}));
-		openOutput.add(TweenMax.to('.output', .125, {x:0, scale:1, height:"100vh", autoAlpha:1}));
-		openOutput.pause(0);
+var openOutput			= new TimelineMax({paused:true});
+		openOutput.to('.settings', .25, {x:500, scale:-1.25, height:"50vh", autoAlpha:0});
+		openOutput.to('.output', .125, {x:0, scale:1, height:"100vh", autoAlpha:1}, '-=.125');
 
 hammerOutput.on('swipeleft', function(e){
 	openSettings.play(0);
-	console.log('swipeleft');
 });
 
 hammerSettings.on('swiperight', function(e){
 	openOutput.play(0);
-	console.log('swiperight');
 });
-// $('.openNav').on('click', function(e){
-//   var h = $(this).outerHeight();
-//   var H = $(window).outerHeight();
-//   var Hi = (H-h)+"px";
-  
-//   if($('.settings').is(":hidden")){
-//     $('.settings').css({"height":Hi});
-//     $('.settings').slideDown(400);
-//   }else {
-//     $('.settings').slideUp(200);
-//   }
-// });
+
 
 //toggle the chord and chord note elements
-$('.CHORDnotes').hide();
+TweenMax.set('.CHORDnotes', {rotationY:-90});
+
+var chordAnimation = new TimelineMax({paused:true});
+		chordAnimation.to('.CHORDS', .25, {rotationY:90, autoAlpha:0, display:'none'});
+		chordAnimation.to('.CHORDnotes', .25, {rotationY:0, autoAlpha:1, display:'block'});
+		
+var chordNotesAnimation = new TimelineMax({paused:true});
+		chordNotesAnimation.to('.CHORDnotes', .25, {rotationY:-90, autoAlpha:0, display:'none'});
+		chordNotesAnimation.to('.CHORDS', .25, {rotationY:0, autoAlpha:1, display:'block'});
+
 $('.CHORDS').on('click', function(e){
-	$(this).hide();
-	$('.CHORDnotes').show();
+	chordAnimation.play(0);
 });
 $('.CHORDnotes').on('click', function(e){
-	$(this).hide();
-	$('.CHORDS').show();
+	chordNotesAnimation.play(0);
 });
 
 //bliss toggle
-$('label[for="bliss"] i').on('click', function(e){
-		$(this).toggleClass('fa-thumbs-up');
-		$(this).toggleClass('fa-thumbs-down');
+var blissAnimation = new TimelineMax({paused:true});
+		blissAnimation.to('.bliss h3', .5, {y:-50, autoAlpha:0, ease: Power2.easeIn});
+		blissAnimation.to('.blissIcon', .5, {rotationX:180, y:50, autoAlpha:0, ease: Power2.easeIn}, '-=.5');
+		blissAnimation.to('.set_mode', .5, {x:-300, autoAlpha:0}, '-=.25');
+		blissAnimation.to('.chords_to_choose_from', .5, {x:300, autoAlpha:0}, '-=.5');
+		blissAnimation.to('.num_of_chords', 1, {autoAlpha:0}, '-=.75');
+		blissAnimation.set('.notBliss', {css:{'display':'none'}});
+		blissAnimation.to('.settings', 1, {backgroundColor:'hsl(48, 100%, 93%)'}, '-=.5');
+		blissAnimation.to('.bliss h3', .25, {y:0, autoAlpha:1}, '-=.25');
+		blissAnimation.to('.blissIcon', .25, {y:0, autoAlpha:1}, '-=.25');
 
+
+$('label[for="bliss"] i').on('click', function(e){
+		//$(this).toggleClass('fa-thumbs-up');
+		//$(this).toggleClass('fa-thumbs-down');
+		
 	if(!$('input#bliss').is(':checked')){
+		blissAnimation.play(0);
 		Bliss = true;
-		$('input[name="set_mode"], input[name="numOfChords"], input[name="chordList"]').prop('checked', false).prop('disabled', true);
-		$('.set_mode, .num_of_chords, .chords_to_choose_from').slideUp();
-		$('.settings').toggleClass('glow');
+		//change bliss <h3>
+		$('.bliss h3').html('you have chosen ... bliss');
+		//for output page buton
 		$('.button').toggleClass('blissSolid');
 		$('.button').toggleClass('fa-meh-o');
 		$('.button').toggleClass('fa-smile-o');
-		$('.bliss h3').html('you have chosen bliss...');
 	}else{
+		blissAnimation.reverse();
 		Bliss = false;
-		$('.settings').toggleClass('glow');
+		//change bliss <h3>
+		$('.bliss h3').html('predestined bliss?');
+		//for output page buton
 		$('.button').toggleClass('blissSolid');
 		$('.button').toggleClass('fa-meh-o');
 		$('.button').toggleClass('fa-smile-o');
-		$('input[name="set_mode"], input[name="numOfChords"], input[name="chordList"]').prop('disabled', false);
-		$('.set_mode, .num_of_chords, .chords_to_choose_from').slideDown();
-		$('input#mode_auto').prop('checked', true);
-		$('input#threeChord').prop('checked', true);
-		$('input[name="chordList"]').prop('checked', true);
-		$('.bliss h3').html('predestined bliss?');
 	}
 });
 }); //END Doc.ready
@@ -434,32 +441,25 @@ $('label[for="bliss"] i').on('click', function(e){
 //doc load
 $(window).on('load', function(){
 
+  var openAnimation = new TimelineMax();
+  		openAnimation.staggerFrom('.outputEl', .75, {rotationX: 90, alpha:0, ease: Back.easeOut.config(5)}, .125);
+  		openAnimation.to('.button', .5, {rotationY: 360}, '-=.65');
+  		openAnimation.pause(0);
+	
+	var openAnimationStart = function(){
+		openAnimation.play(0); 
+	}
+  
   
   //if loader play()
   var loaded = function(){
     if($('.loader').is(':visible')){
       console.log('loader detected <br/>');
       //loader animation  
-      var loaderExit = new TimelineMax({onComplete: function(){console.log('loader removerd <br/>')}});
-          loaderExit.add(TweenMax.to('.loader', .5, {autoAlpha:0}));
+      var loaderExit = new TimelineMax({onComplete: openAnimationStart});
+          loaderExit.to('.loader', .5, {autoAlpha:0});
 	  }
   };
 	
   loaded();
 }); //END WIN.load
-
-
-
-//********************************************************************
-
-
-//========================================================================
-//=============================PARSING SECTION============================
-//========================================================================
-
-$(document).ready(function(){
-
-
-
-}); //END Doc Ready
-

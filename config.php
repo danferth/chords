@@ -1,9 +1,9 @@
 <?php
 
 //is the site in production
-$production    = false;
+$production    = true;
 //if not in production, what is the version for css and js
-$version        = '1.2.3';
+$version        = '1.3.0';
 
 //SERVER & MAINTENANCE settings
 $https          = true;
@@ -14,10 +14,10 @@ $maintenance  = [
 
 //enable scripts
 $gsap           = true;
-$sweetalert     = true;
+$sweetalert     = false;
 $hammer         = true;
-$moment         = true;
-$localforage    = true;
+$moment         = false;
+$localforage    = false;
 
 //google stuff
 $googleAnalytics = "";

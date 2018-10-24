@@ -1,7 +1,7 @@
 // put general site styles here
 //NOTE: width for iPhone testing 414px
 $basecolor: cornsilk;
-$bodyBG: hsla(204, 9%, 14%, 1);
+$bodyBG: hsl(204, 9%, 14%);
 
 $KEYsize: 29rem;
 $KEYline: 29rem;
@@ -120,8 +120,13 @@ body, html{
     }
   }
 }
-.CHORDnotes .chord{
-  font-size: $CHORDnotesSize;
+.CHORDnotes{
+  visibility:hidden;
+  opacity:0;
+  display:none;
+  .chord{
+    font-size: $CHORDnotesSize;
+  }
 }
 
 label{
@@ -141,6 +146,10 @@ label{
   border:2px solid rgba(darken($basecolor, 25%), .5);
   box-shadow: 0 0 1.75vh darken($bodyBG, 15%);
   outline:none;
+  &:hover, &:focus{
+    background:transparent;
+    color:rgba(darken($basecolor, 10%), .6);
+  }
 }
 
 
@@ -232,8 +241,8 @@ label{
 }
 .bliss input[type='checkbox']:checked + label{
   background:none;
-  color:$basecolor;
-  text-shadow:0 0 1vh black;
+  color:lighten($bodyBG, 15%);
+  //text-shadow:0 0 1vh black;
   box-shadow: none;
 }
 input[type="radio"]:checked + label, input[type="checkbox"]:checked + label{
@@ -241,15 +250,12 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label{
   color:darken(white, 80%);
   box-shadow: 0 0 1vh black;
 }
-//if bliss is checked need to add this to .settings
-.glow{
-  background: linear-gradient(to bottom, $basecolor 0%, $bodyBG 100%);
-  background:$basecolor;
-}
 //for when it's bliss time the button changes
 .blissSolid{
-  box-shadow:0 0 4vh 1vh $basecolor;
-  color:rgba($basecolor, .8);
+  color:rgba($basecolor, .75);
+  &:hover, &:focus{
+    color:rgba($basecolor, .75);
+  }
 }
 //disabled inputs
 input:disabled + label{

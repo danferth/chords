@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
 <!-- START -->
 <div class="wrap" id="wrap">
 <div class="settings" id="settings">
-<div class="set_mode">
+<div class="set_mode notBliss">
   <h3>set mode</h3>
   <div class="group">
     <input id="mode_auto" type="radio" name="set_mode" value="auto" checked><label for="mode_auto">Auto</label>
@@ -20,7 +20,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
 
 
 
-<div class="num_of_chords">
+<div class="num_of_chords notBliss">
   <h3>how many chords?</h3>
   <div class="group">
     <input id="oneChord" type="radio" name="numOfChords" value="1"><label for="oneChord">1</label>
@@ -31,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
   </div>
 </div>
 
-<div class="chords_to_choose_from">
+<div class="chords_to_choose_from notBliss">
   <h3>which chords can we use?</h3>
   <div class="group">
     <input id="Chord-0" type="checkbox" name="chordList" value="0" checked><label for="Chord-0">1</label>
@@ -47,7 +47,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
 <div class="bliss">
   <h3>predestined bliss?</h3>
   <div class="group">
-    <input id="bliss" type="checkbox" name="bliss" value="0" ><label for="bliss"><i class="fa fa-thumbs-down"></i></label>
+    <input id="bliss" type="checkbox" name="bliss" value="0" ><label for="bliss"><i class="blissIcon fa fa-thumbs-down"></i></label>
   </div>
 </div>
 
@@ -61,14 +61,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
 
 <div class="output" id="output">
 
-<span class="KEY"></span>
+<span class="outputEl KEY"></span>
 
-<span class="MODE"></span>
-<span class="NOTES"></span>
-<span class="CHORDS"></span>
-<span class="CHORDnotes"></span>
+<span class="outputEl MODE"></span>
+<span class="outputEl NOTES"></span>
+<span class="outputEl CHORDS"></span>
+<span class="outputEl CHORDnotes"></span>
   
-<i class="button fa fa-meh-o"></i>
+<i class="outputEl button fa fa-meh-o"></i>
   
 </div><!-- END output -->
   
